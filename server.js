@@ -92,14 +92,66 @@ const pool = new Pool({
 });
 pool.on('error', (err) => console.error('Database pool error:', err.message));
 
+const FALLBACK_ARTIGOS = {
+    1: [
+        {
+            id: 1,
+            titulo: 'A Importância da Inteligência Atuarial na Profissão do Atuário',
+            link: 'https://drive.google.com/file/d/1ECeRRknWMmV9qqCIjpEszV3z5v11s1Gs/view?usp=drive_link',
+            imagem_url: '/images/ai_actuary.png',
+            area: 'Tecnologia'
+        },
+        {
+            id: 5,
+            titulo: 'Governança Corporativa nos Fundos de Pensão',
+            link: 'https://drive.google.com/file/d/1D_RFzaBXmiv588FA0L1mHUWePtmRUhFH/view?usp=drive_link',
+            imagem_url: '',
+            area: 'Governança'
+        },
+        {
+            id: 7,
+            titulo: 'Perícia Atuarial em Fundos de Pensão (Em Breve)',
+            link: '#',
+            imagem_url: '',
+            area: 'Judicial'
+        }
+    ],
+    2: [
+        {
+            id: 2,
+            titulo: 'The Importance of Artificial Inteligence in the Actuarial Profession',
+            link: 'https://drive.google.com/file/d/1d3ZzUkAE_E6CpedsSYlwAJJX3If2nX0V/view?usp=drive_link',
+            imagem_url: '/images/ai_actuary.png',
+            area: 'Tecnologia'
+        },
+        {
+            id: 6,
+            titulo: 'Corporate Governance in Pension Funds',
+            link: 'https://drive.google.com/file/d/1Q2XBj0P4F8P9GC-dbF-kZ_99Xg5E7lkE/view?usp=drive_link',
+            imagem_url: '',
+            area: 'Governança'
+        },
+        {
+            id: 8,
+            titulo: 'Actuarial Forensics in Pension Funds (Coming Soon)',
+            link: '#',
+            imagem_url: '',
+            area: 'Judicial'
+        }
+    ]
+};
+
 app.get(['/api/artigos', '/curriculo/api/artigos'], async (req, res) => {
+    const langCode = req.query.lang === '2' ? 2 : 1;
     try {
-        const langCode = req.query.lang === '2' ? 2 : 1; 
         const result = await pool.query('SELECT id, titulo, link, imagem_url, area FROM artigos WHERE idioma = $1 ORDER BY area ASC, id ASC', [langCode]);
-        res.json(result.rows);
+        if (result.rows && result.rows.length > 0) {
+            return res.json(result.rows);
+        }
+        res.json(FALLBACK_ARTIGOS[langCode] || []);
     } catch (error) {
-        console.error("Error fetching articles:", error.message);
-        res.json([]);
+        console.error("Error fetching articles, using fallback:", error.message);
+        res.json(FALLBACK_ARTIGOS[langCode] || []);
     }
 });
 

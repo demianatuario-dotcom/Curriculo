@@ -58,8 +58,15 @@ const i18n = {
         level_basic: "Básico",
         level_native: "Nativo",
         studies_title: "Meus Estudos & Projetos",
-        studies_intro: "Um espaço reservado para publicações, artigos, anotações de estudo e materiais de desenvolvimento contínuo em tecnologia, dados e atuária.",
+        studies_intro: "Publicações técnicas, artigos atuariais e projetos práticos organizados em três pilares fundamentais de atuação: Governança, Perícia Judicial e Inovação Tecnológica.",
         studies_empty: "Novos materiais serão publicados aqui em breve.",
+        filter_all: "Todos",
+        filter_gov: "Governança",
+        filter_jud: "Judicial",
+        filter_tech: "Tecnologia",
+        studies_cta_title: "Precisa de parecer atuarial, laudo pericial ou soluções em IA?",
+        studies_cta_desc: "Estou à disposição para consultorias técnicas personalizadas e estudos de viabilidade.",
+        studies_cta_btn: 'Falar pelo WhatsApp <i class="fa-solid fa-arrow-right"></i>',
         promo_section_title: "Minha Empresa",
         promo_badge: "MINHA EMPRESA",
         promo_title: "Domino Automate — Automação, IA e Web",
@@ -130,8 +137,15 @@ const i18n = {
         level_basic: "Basic",
         level_native: "Native",
         studies_title: "My Studies & Projects",
-        studies_intro: "A space reserved for publications, articles, study notes, and continuous development materials in technology, data, and actuarial science.",
+        studies_intro: "Technical publications, actuarial articles, and practical projects structured across three fundamental pillars: Governance, Judicial Expertise, and Technological Innovation.",
         studies_empty: "New materials will be published here soon.",
+        filter_all: "All",
+        filter_gov: "Governance",
+        filter_jud: "Judicial",
+        filter_tech: "Technology",
+        studies_cta_title: "Need actuarial consulting, judicial expertise, or AI solutions?",
+        studies_cta_desc: "Available for customized technical consultations, reports, and feasibility studies.",
+        studies_cta_btn: 'Chat on WhatsApp <i class="fa-solid fa-arrow-right"></i>',
         promo_section_title: "My Company",
         promo_badge: "MY COMPANY",
         promo_title: "Domino Automate — Automation, AI & Web",
@@ -187,7 +201,134 @@ function updateLanguage() {
     fetchArtigos(currentLang);
 }
 
-// === ARTICLES (GROUPED BY AREA) ===
+// === STUDIES & ARTICLES (THEMES: GOVERNANÇA, JUDICIAL, TECNOLOGIA) ===
+let currentStudiesFilter = 'all';
+let currentArtigos = [];
+
+function getThemeMeta(rawArea, lang) {
+    const areaLower = (rawArea || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (areaLower.includes('gov')) {
+        return {
+            key: 'Governança',
+            title: lang === 'pt' ? 'Governança' : 'Governance',
+            icon: 'fa-landmark',
+            badgeClass: 'badge-governanca'
+        };
+    } else if (areaLower.includes('jud') || areaLower.includes('peric') || areaLower.includes('forens')) {
+        return {
+            key: 'Judicial',
+            title: lang === 'pt' ? 'Judicial' : 'Judicial',
+            icon: 'fa-scale-balanced',
+            badgeClass: 'badge-judicial'
+        };
+    } else if (areaLower.includes('tec') || areaLower.includes('tech') || areaLower.includes('ia') || areaLower.includes('dados')) {
+        return {
+            key: 'Tecnologia',
+            title: lang === 'pt' ? 'Tecnologia' : 'Technology',
+            icon: 'fa-microchip',
+            badgeClass: 'badge-tecnologia'
+        };
+    }
+    return {
+        key: 'Outros',
+        title: lang === 'pt' ? 'Outros' : 'Other',
+        icon: 'fa-folder',
+        badgeClass: 'badge-tecnologia'
+    };
+}
+
+function renderArtigos(lang) {
+    const gallery = document.getElementById('artigos-gallery');
+    const emptyState = document.getElementById('artigos-empty');
+    if (!gallery) return;
+
+    if (!currentArtigos || currentArtigos.length === 0) {
+        gallery.style.display = 'none';
+        if (emptyState) emptyState.style.display = 'block';
+        return;
+    }
+
+    // Group items by theme key
+    const grouped = {
+        'Governança': [],
+        'Judicial': [],
+        'Tecnologia': []
+    };
+
+    currentArtigos.forEach(item => {
+        const meta = getThemeMeta(item.area, lang);
+        if (!grouped[meta.key]) grouped[meta.key] = [];
+        grouped[meta.key].push({ ...item, meta });
+    });
+
+    // Determine which themes to show based on filter
+    const themeOrder = ['Governança', 'Judicial', 'Tecnologia'];
+    const activeThemes = currentStudiesFilter === 'all'
+        ? themeOrder.filter(theme => grouped[theme] && grouped[theme].length > 0)
+        : [currentStudiesFilter].filter(theme => grouped[theme] && grouped[theme].length > 0);
+
+    gallery.innerHTML = '';
+
+    if (activeThemes.length === 0) {
+        gallery.style.display = 'none';
+        if (emptyState) emptyState.style.display = 'block';
+        return;
+    }
+
+    gallery.style.display = 'block';
+    if (emptyState) emptyState.style.display = 'none';
+
+    activeThemes.forEach(themeKey => {
+        const items = grouped[themeKey];
+        const firstMeta = items[0]?.meta || getThemeMeta(themeKey, lang);
+
+        const groupHTML = `
+            <div class="area-group reveal-item">
+                <h3 class="area-group-header">
+                    <i class="fa-solid ${firstMeta.icon}"></i> ${firstMeta.title}
+                </h3>
+                <div class="artigos-grid">
+                    ${items.map(item => {
+                        const isDraft = !item.link || item.link === '#' || item.titulo.toLowerCase().includes('breve') || item.titulo.toLowerCase().includes('soon');
+                        const whatsappMsg = encodeURIComponent(
+                            lang === 'pt' 
+                                ? `Olá Demian, vi seu currículo e gostaria de saber mais sobre o estudo: "${item.titulo}".`
+                                : `Hello Demian, I saw your portfolio and would like more details regarding: "${item.titulo}".`
+                        );
+                        const finalLink = isDraft ? `https://wa.me/5561981171564?text=${whatsappMsg}` : item.link;
+
+                        return `
+                            <a href="${finalLink}" target="_blank" rel="noopener" class="artigo-item">
+                                <span class="artigo-badge ${item.meta.badgeClass}">
+                                    <i class="fa-solid ${item.meta.icon}"></i> ${item.meta.title}
+                                </span>
+                                ${item.imagem_url
+                                    ? `<img src="${item.imagem_url.startsWith('http') ? item.imagem_url : (apiBasePath + (item.imagem_url.startsWith('/') ? item.imagem_url : '/' + item.imagem_url))}" alt="${item.titulo}" class="artigo-img" loading="lazy">`
+                                    : `<div class="artigo-img-fallback">
+                                         <i class="fa-solid ${item.meta.icon} theme-big-icon"></i>
+                                         <div class="artigo-fallback-title">${item.titulo}</div>
+                                       </div>`
+                                }
+                                <div class="artigo-overlay">
+                                    <h3 class="artigo-title">${item.titulo}</h3>
+                                    ${isDraft 
+                                        ? `<span class="artigo-status-tag"><i class="fa-solid fa-clock"></i> ${lang === 'pt' ? 'Em Breve / Em Redação' : 'Coming Soon'}</span>
+                                           <span class="artigo-icon" style="font-size: 0.85rem;"><i class="fa-brands fa-whatsapp"></i> ${lang === 'pt' ? 'Solicitar Minuta' : 'Request Draft'}</span>`
+                                        : `<span class="artigo-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${lang === 'pt' ? 'Acessar no Google Drive' : 'Access on Google Drive'}</span>`
+                                    }
+                                </div>
+                            </a>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+        gallery.insertAdjacentHTML('beforeend', groupHTML);
+    });
+
+    initRevealObserver();
+}
+
 async function fetchArtigos(lang) {
     const gallery = document.getElementById('artigos-gallery');
     const emptyState = document.getElementById('artigos-empty');
@@ -198,54 +339,11 @@ async function fetchArtigos(lang) {
     try {
         const response = await fetch(`${apiBasePath}/api/artigos?lang=${langCode}`);
         if (!response.ok) throw new Error('Failed to fetch articles');
-        const artigos = await response.json();
-
-        gallery.innerHTML = '';
-
-        if (artigos.length === 0) {
-            gallery.style.display = 'none';
-            emptyState.style.display = 'block';
-        } else {
-            gallery.style.display = 'block';
-            emptyState.style.display = 'none';
-
-            // Group by area
-            const grouped = {};
-            artigos.forEach(item => {
-                const area = item.area || (lang === 'pt' ? 'Outros' : 'Other');
-                if (!grouped[area]) grouped[area] = [];
-                grouped[area].push(item);
-            });
-
-            // Render each area group
-            Object.keys(grouped).forEach(area => {
-                const groupHTML = `
-                    <div class="area-group reveal-item">
-                        <h3 class="area-group-header"><i class="fa-solid fa-folder"></i> ${area}</h3>
-                        <div class="artigos-grid">
-                            ${grouped[area].map(item => `
-                                <a href="${item.link}" target="_blank" rel="noopener" class="artigo-item">
-                                    ${item.imagem_url
-                                        ? `<img src="${item.imagem_url.startsWith('http') ? item.imagem_url : (apiBasePath + (item.imagem_url.startsWith('/') ? item.imagem_url : '/' + item.imagem_url))}" alt="${item.titulo}" class="artigo-img">`
-                                        : `<div class="artigo-img-fallback"><i class="fa-solid fa-file-lines"></i></div>`
-                                    }
-                                    <div class="artigo-overlay">
-                                        <h3 class="artigo-title">${item.titulo}</h3>
-                                        <i class="fa-solid fa-arrow-up-right-from-square artigo-icon"></i>
-                                    </div>
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-                gallery.insertAdjacentHTML('beforeend', groupHTML);
-            });
-
-            initRevealObserver();
-        }
+        currentArtigos = await response.json();
+        renderArtigos(lang);
     } catch (error) {
         console.error('Error loading articles:', error);
-        gallery.innerHTML = '<p style="color: var(--text-secondary);">Erro ao carregar materiais.</p>';
+        gallery.innerHTML = '<p style="color: var(--text-secondary); margin-top: 1rem;">Não foi possível carregar os materiais no momento.</p>';
     }
 }
 
@@ -349,6 +447,17 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.remove('open');
         });
     }
+
+    // Studies Theme Filter Pills
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            filterPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            currentStudiesFilter = pill.getAttribute('data-filter');
+            renderArtigos(currentLang);
+        });
+    });
 
     // Chat
     const chatInput = document.getElementById('chat-input');

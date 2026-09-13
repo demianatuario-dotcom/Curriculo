@@ -16,6 +16,7 @@
     <meta property="og:description"
         content="Portfólio profissional — Atuária, Tecnologia, IA Generativa e Automação">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="images/demian_profile.jpg">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +32,10 @@
 
     <!-- Mobile Header -->
     <div class="mobile-header">
-        <h2>Demian Pereira</h2>
+        <div class="mobile-brand">
+            <img src="images/demian_profile.jpg" alt="Demian Pereira" class="mobile-avatar">
+            <h2>Demian Pereira</h2>
+        </div>
         <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -41,6 +45,9 @@
     <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
         <div class="sidebar-header">
+            <div class="profile-avatar-wrapper">
+                <img src="images/demian_profile.jpg" alt="Demian Pereira" class="profile-avatar" loading="eager">
+            </div>
             <div class="name-badge">
                 <h2>Demian Pereira</h2>
                 <span class="badge">MIBA 1807</span>
@@ -360,15 +367,45 @@
         <!-- ==================== STUDIES ==================== -->
         <section id="studies" class="section">
             <h1 class="page-title" data-i18n="studies_title">Meus Estudos & Projetos</h1>
-            <p class="intro-text" data-i18n="studies_intro">Um espaço reservado para publicações, artigos, anotações de
-                estudo e materiais de desenvolvimento contínuo em tecnologia, dados e atuária.</p>
+            <p class="intro-text" data-i18n="studies_intro">Publicações técnicas, artigos atuariais e projetos práticos organizados em três pilares fundamentais de atuação: Governança, Perícia Judicial e Inovação Tecnológica.</p>
 
-            <div id="artigos-gallery" class="artigos-grid">
-                <!-- Articles injected dynamically by script.js -->
+            <!-- Theme Filter Pills -->
+            <div class="studies-filters" id="studies-filters" role="tablist" aria-label="Filtrar temas de estudos">
+                <button class="filter-pill active" data-filter="all" id="filter-all">
+                    <i class="fa-solid fa-layer-group"></i> <span data-i18n="filter_all">Todos</span>
+                </button>
+                <button class="filter-pill" data-filter="Governança" id="filter-gov">
+                    <i class="fa-solid fa-landmark"></i> <span data-i18n="filter_gov">Governança</span>
+                </button>
+                <button class="filter-pill" data-filter="Judicial" id="filter-jud">
+                    <i class="fa-solid fa-scale-balanced"></i> <span data-i18n="filter_jud">Judicial</span>
+                </button>
+                <button class="filter-pill" data-filter="Tecnologia" id="filter-tech">
+                    <i class="fa-solid fa-microchip"></i> <span data-i18n="filter_tech">Tecnologia</span>
+                </button>
+            </div>
+
+            <!-- Articles Container / Dynamic Area Groups -->
+            <div id="artigos-gallery" class="artigos-container">
+                <!-- Injected dynamically by script.js -->
             </div>
             <div id="artigos-empty" class="empty-state" style="display: none; width: 100%; margin-top: 2rem;">
                 <i class="fa-solid fa-folder-open"></i>
                 <p data-i18n="studies_empty">Novos materiais serão publicados aqui em breve.</p>
+            </div>
+
+            <!-- Studies CTA -->
+            <div class="studies-cta reveal-item">
+                <div class="studies-cta-content">
+                    <i class="fa-brands fa-whatsapp cta-icon"></i>
+                    <div>
+                        <h4 data-i18n="studies_cta_title">Precisa de parecer atuarial, laudo pericial ou soluções em IA?</h4>
+                        <p data-i18n="studies_cta_desc">Estou à disposição para consultorias técnicas personalizadas e estudos de viabilidade.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5561981171564?text=Ol%C3%A1%20Demian,%20vi%20seus%20estudos%20no%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" class="btn-cta" data-i18n="studies_cta_btn">
+                    Falar pelo WhatsApp <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
