@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "idioma": 1,
+    "link": "https://drive.google.com/file/d/1rUqwgXRiHCRrTOHgLvrIWO2yY3qF0dI7/view?usp=drive_link",
+    "titulo": "A Importância da Inteligência Atuarial na Profissão do Atuário",
+    "imagem_url": null
+  },
+  {
+    "id": 2,
+    "idioma": 2,
+    "link": "https://drive.google.com/file/d/1GQFjEyEkB0Z5ru8YIFOn6qrFAKWWX_7_/view?usp=drive_link",
+    "titulo": "The Importance of Artificial Inteligence in the Actuarial Profession",
+    "imagem_url": null
+  }
+]

@@ -1,0 +1,20 @@
+Para armazenar um arquivo PDF no ecossistema Google e gerar um link público de acesso, o método mais eficiente é utilizar o Google Drive (que integra com o Google Docs/Workspace). 
+
+Aqui está o passo a passo, tanto para desktop quanto para dispositivos móveis:
+
+Passo a Passo: Armazenar e Compartilhar PDF (Desktop)
+
+Faça o Upload do PDF:
+Acesse o Google Drive (drive.google.com).
+Clique no botão "+ Novo" no canto superior esquerdo e selecione "Upload de arquivo".
+Selecione o arquivo PDF no seu computador.
+Gerar o Link Público:
+Após o upload, localize o arquivo no Drive.
+Clique com o botão direito sobre o PDF e selecione "Compartilhar" > "Compartilhar".
+Alterar Permissões (Tornar Público):
+Na janela que se abre, procure por "Acesso geral".
+Altere de "Restrito" para "Qualquer pessoa com o link".
+Certifique-se de que a permissão ao lado está como "Leitor" (para que as pessoas apenas visualizem ou baixem o arquivo, sem editá-lo).
+Copiar e Compartilhar:
+Clique em "Copiar link" e depois em "Concluído".
+Agora você pode enviar este link por e-mail, WhatsApp ou incorporá-lo em sites. 

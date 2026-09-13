@@ -1,0 +1,19 @@
+Tema 7: Transformação Digital na Perícia Financeira: Automação de Cargas e Saneamento de Dados com Python e R
+O que abordar: Um guia voltado para o mercado de perícias demonstrando como utilizar scripts analíticos para reconciliação de bases de dados cadastrais massivas de fundos de pensão, identificação de inconsistências em folhas de benefícios e tratamento de dados complexos.  
+Gancho Comercial: Vende sua imagem de "Atuário Tech", atraindo escritórios de perícia tradicionais ou empresas de contabilidade que querem contratar sua consultoria para automatizar seus processos internos.  
+
+Tema 9: IA Generativa e Agentes Inteligentes Aplicados ao Suporte Técnico e Relatórios no Mercado Financeiro
+O que abordar: Framework de implementação de grandes modelos de linguagem (LLMs) e agentes (como n8n integrados a canais digitais) para automatizar a redação de relatórios executivos, minutas de notas técnicas e atendimento qualificado em plataformas financeiras/jurídicas.  
+Gancho Comercial: Demonstra na prática sua capacidade de construir o que está escrito no seu currículo, atraindo empresas interessadas em escalar o atendimento e a eficiência operacional.  
+
+Tema 17: Engenharia de Prompts e Agentes de IA na Redução do Custo Operacional de Escritórios de Perícia e Advocacia
+O que abordar: Como estruturar workflows automatizados com IA Generativa para fazer a triagem inicial de petições judiciais, extrair quesitos automaticamente de arquivos em PDF e rascunhar minutas de manifestações técnicas.  
+Gancho Comercial: Atrai diretamente sócios-diretores de escritórios de advocacia e contabilidade que buscam eficiência operacional imediata através do uso de IA.  
+
+Tema 18: Automação do Atendimento e Retenção no Setor de Serviços Complexos via Agentes Inteligentes no WhatsApp
+O que abordar: Estudo de caso e arquitetura de integração (usando n8n, APIs e LLMs) para criar canais de atendimento automatizados que explicam conceitos complexos (como reajustes, cotas de condomínios ou andamentos periciais) diretamente ao cliente final.  
+Gancho Comercial: Perfeito para administradoras de condomínios, imobiliárias e prestadores de serviços que querem implementar tecnologia escalável de retenção de clientes.  
+
+Tema 19: Rastreabilidade Avançada de Dados Atuariais: Integrando Python, R e n8n para Mitigação de Risco Operacional
+O que abordar: Framework técnico demonstrando como interligar sistemas legados (Access/SQL) com rotinas analíticas modernas em Python/R, eliminando o erro humano na manipulação de bases cadastrais massivas.  
+Gancho Comercial: Posiciona você como o consultor ideal para empresas de tecnologia e finanças que precisam sanear dados legados sem estourar o orçamento em softwares caros de mercado.  

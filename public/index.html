@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        if (window.location.pathname === '/curriculo') {
+            window.location.replace('/curriculo/' + window.location.search + window.location.hash);
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demian Pereira | Atuário & Especialista em Dados</title>
+    <meta name="description"
+        content="Demian Lisboa Pereira — Atuário (MIBA 1807) com +15 anos de experiência em previdência complementar, governança, gestão de riscos, IA Generativa e automação.">
+    <meta property="og:title" content="Demian Pereira | Atuário & Especialista em Dados">
+    <meta property="og:description"
+        content="Portfólio profissional — Atuária, Tecnologia, IA Generativa e Automação">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="light-mode">
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <h2>Demian Pereira</h2>
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+        <div class="sidebar-header">
+            <div class="name-badge">
+                <h2>Demian Pereira</h2>
+                <span class="badge">MIBA 1807</span>
+            </div>
+            <p class="subtitle" data-i18n="role1">Atuário</p>
+            <p class="subtitle" data-i18n="role2">Tech & Automação</p>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about" class="active" id="nav-about"><i class="fa-solid fa-user"></i> <span
+                        data-i18n="nav_about">Sobre Mim</span></a></li>
+            <li><a href="#skills" id="nav-skills"><i class="fa-solid fa-chart-bar"></i> <span
+                        data-i18n="nav_skills">Habilidades</span></a></li>
+            <li><a href="#studies" id="nav-studies"><i class="fa-solid fa-book-open"></i> <span
+                        data-i18n="nav_studies">Meus Estudos</span></a></li>
+            <li><a href="#assistant" id="assistant-nav-btn"><i class="fa-solid fa-robot"></i> <span
+                        data-i18n="nav_assistant">Assistente IA</span></a></li>
+        </ul>
+
+        <div class="theme-toggle">
+            <button id="lang-btn" aria-label="Alternar idioma">
+                <span class="flag-icon">🇧🇷</span> Português
+            </button>
+            <button id="theme-btn" aria-label="Alternar tema escuro">
+                <i class="fa-solid fa-moon"></i> <span id="theme-text" data-i18n="theme_dark">Tema Escuro</span>
+            </button>
+        </div>
+
+        <div class="contact-info">
+            <p><a href="https://wa.me/5561981171564" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-whatsapp"></i> (61) 98117-1564</a></p>
+            <p><a href="https://www.linkedin.com/in/demian-lisboa-pereira-a33b8417/" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-linkedin"></i> LinkedIn</a></p>
+            <p><a href="mailto:demian.pereira@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail</a></p>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- ==================== ABOUT ==================== -->
+        <section id="about" class="section active-section">
+            <h1 class="page-title" data-i18n="about_title">Sobre Mim</h1>
+
+            <div class="card reveal-item">
+                <p data-i18n="about_p1">Sou <strong>atuário (MIBA 1807)</strong>, com <strong>mais de 15 anos de
+                        estrada</strong> em previdência complementar, governança e gestão de riscos — e confesso: sempre
+                    fui movido por uma curiosidade quase obsessiva em entender o que os números estão tentando nos
+                    contar.</p>
+                <p data-i18n="about_p2">Minha atuação profissional se desenvolveu na <strong>Caixa Econômica
+                        Federal</strong>, acompanhando de perto planos previdenciários patrocinados, avaliando reservas
+                    matemáticas, <strong>solvência, liquidez, riscos e equacionamentos</strong>, em conformidade com o
+                    CPC 33 (R1) e os normativos da PREVIC.</p>
+                <p data-i18n="about_p3">Traduzir estruturas técnicas complexas em análises claras, consistentes e úteis
+                    para a tomada de decisão sempre foi parte central do meu trabalho. Com o tempo, percebi que bons
+                    modelos não bastam se os processos forem lentos, frágeis ou opacos. Foi aí que <strong>mergulhei de
+                        vez em automação, programação e transformação digital</strong>, utilizando Python, R, Excel/VBA e
+                    IA Generativa, não por modismo, mas para <strong>reduzir riscos, acelerar entregas e elevar o nível
+                        das análises</strong>.</p>
+                <p data-i18n="about_p4">Hoje, aplico essa mesma mentalidade no <strong>desenvolvimento e hospedagem de
+                        websites e agentes de Inteligência Artificial integrados ao WhatsApp</strong>, voltados a
+                    pequenos negócios como salões, estúdios de beleza e barbearias. Esses agentes não apenas respondem
+                    mensagens: <strong>atuam com estratégia</strong>, usando técnicas de marketing para atrair, engajar e
+                    reter clientes — porque <em>tecnologia boa é aquela que gera resultado real</em>.</p>
+                <p data-i18n="about_p5">Também atuei como <strong>Perito Judicial</strong> no TRT da 10ª Região e no
+                    TJDFT, elaborando laudos e pareceres técnicos atuariais, financeiros e previdenciários. Sempre
+                    acreditei que a perícia cumpre melhor seu papel quando alia <strong>rigor técnico, imparcialidade e
+                        linguagem acessível</strong> — afinal, conhecimento que não é compreendido não cumpre sua função
+                    social.</p>
+                <p data-i18n="about_p6">No fim das contas, meu trabalho acontece na interseção entre <strong>atuária,
+                        tecnologia, IA e negócio</strong>. Gosto de modelos robustos, processos bem automatizados e
+                    decisões bem fundamentadas. Ah — e faço questão de que tudo isso seja bem explicado, porque,
+                    convenhamos: <strong>um bom gráfico e uma boa narrativa costumam valer mais do que cem páginas de
+                        números soltos</strong> 😉</p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <h2 class="section-subtitle" data-i18n="experience_title"><span class="subtitle-accent"></span>Experiência
+            </h2>
+
+            <div class="timeline-alt">
+                <div class="timeline-item-alt left reveal-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <h3 data-i18n="experience_role1">Atuário / Coordenador</h3>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="company">Caixa Econômica Federal &nbsp;&bull;&nbsp; Atual</p>
+                            <p data-i18n="experience_desc1">Modelagem atuarial, solvência e liquidez. Desenvolvimento de
+                                automações e uso intensivo de IA Generativa para apoio analítico e redação técnica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-alt right reveal-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <h3 data-i18n="experience_role2">Consultor em IA e Automação</h3>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="company">Negócios Locais &nbsp;&bull;&nbsp; Atual</p>
+                            <p data-i18n="experience_desc2">Desenvolvimento de agentes de IA integrados ao WhatsApp para
+                                atendimento automatizado, marketing e gestão de clientes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item-alt left reveal-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <h3 data-i18n="experience_role3">Perito Judicial</h3>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="company">TRT 10ª Região e TJDFT &nbsp;&bull;&nbsp; Experiência Prévia</p>
+                            <p data-i18n="experience_desc3">Elaboração de laudos e pareceres técnicos atuariais,
+                                financeiros e previdenciários. Apuração com rigor técnico em cálculos complexos,
+                                traduzindo resultados com clareza para o suporte às decisões judiciais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <h2 class="section-subtitle" data-i18n="education_title"><span class="subtitle-accent"></span>Formação
+                Acadêmica</h2>
+
+            <div class="education-grid">
+                <div class="education-card reveal-item">
+                    <div class="education-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 data-i18n="edu1_title">MBA em Finanças</h3>
+                    <p class="education-institution">IBMEC</p>
+                </div>
+                <div class="education-card reveal-item">
+                    <div class="education-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 data-i18n="edu2_title">Bacharelado em Atuária</h3>
+                    <p class="education-institution">UFRGS</p>
+                </div>
+                <div class="education-card reveal-item">
+                    <div class="education-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3 data-i18n="edu3_title">Técnico em Sist. de Informação</h3>
+                    <p class="education-institution">UFRGS</p>
+                </div>
+            </div>
+
+            <!-- Domino Automate Promo -->
+            <h2 class="section-subtitle" data-i18n="promo_section_title"><span class="subtitle-accent"></span>Minha Empresa</h2>
+
+            <div class="promo-banner reveal-item">
+                <span class="promo-badge" data-i18n="promo_badge">Minha Empresa</span>
+                <h3 data-i18n="promo_title">Domino Automate — Automação, IA e Web</h3>
+                <p data-i18n="promo_desc">Fundador da Domino Automate, empresa especializada em soluções de IA de alta performance para pequenos e médios negócios. Desenvolvemos agentes autônomos integrados ao WhatsApp, automações com N8N e motores customizados em Python para escalar operações comerciais.</p>
+                <div class="promo-stats">
+                    <div class="promo-stat">
+                        <span class="promo-stat-value" data-i18n="promo_stat1_val">-90%</span>
+                        <span class="promo-stat-label" data-i18n="promo_stat1_lbl">Tempo de Resposta</span>
+                    </div>
+                    <div class="promo-stat">
+                        <span class="promo-stat-value" data-i18n="promo_stat2_val">+28%</span>
+                        <span class="promo-stat-label" data-i18n="promo_stat2_lbl">Conversão Comercial</span>
+                    </div>
+                    <div class="promo-stat">
+                        <span class="promo-stat-value">24/7</span>
+                        <span class="promo-stat-label" data-i18n="promo_stat3_lbl">Disponibilidade</span>
+                    </div>
+                    <div class="promo-stat">
+                        <span class="promo-stat-value" data-i18n="promo_stat4_val">-40%</span>
+                        <span class="promo-stat-label" data-i18n="promo_stat4_lbl">Custo Operacional</span>
+                    </div>
+                </div>
+                <a href="https://domino-automate.com.br" target="_blank" rel="noopener" class="promo-link" data-i18n="promo_cta">
+                    Conhecer a Domino Automate <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section id="skills" class="section">
+            <h1 class="page-title" data-i18n="skills_title">Habilidades</h1>
+
+            <!-- Category: Atuária & Risco -->
+            <div class="skills-category">
+                <div class="category-header">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h2 data-i18n="cat1_title">Atuária & Risco</h2>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk1_1">Previdência Complementar Fechada</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk1_2">CPC 33 (R1) / PREVIC / IFRS</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk1_3">Solvência e Liquidez</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk1_4">Governança Corporativa</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                </div>
+            </div>
+
+            <!-- Category: Tecnologia & Dados -->
+            <div class="skills-category">
+                <div class="category-header">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h2 data-i18n="cat2_title">Tecnologia & Dados</h2>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk2_1">Excel / VBA</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk2_2">Access</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk2_3">Python / R</span>
+                        <span class="skill-level intermediate" data-i18n="level_intermediate">Intermediário</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name">SQL</span>
+                        <span class="skill-level basic" data-i18n="level_basic">Básico</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="40"></div></div>
+                </div>
+            </div>
+
+            <!-- Category: IA Generativa -->
+            <div class="skills-category">
+                <div class="category-header">
+                    <i class="fa-solid fa-brain"></i>
+                    <h2 data-i18n="cat3_title">IA Generativa</h2>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk3_1">Agentes Inteligentes (Gemini, GPT, Copilot)</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk3_2">Automação WhatsApp (N8N)</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk3_3">Desenvolvimento Web & Hospedagem</span>
+                        <span class="skill-level intermediate" data-i18n="level_intermediate">Intermediário</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+                </div>
+            </div>
+
+            <!-- Category: Idiomas -->
+            <div class="skills-category">
+                <div class="category-header">
+                    <i class="fa-solid fa-globe"></i>
+                    <h2 data-i18n="cat4_title">Idiomas</h2>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk4_1">Português</span>
+                        <span class="skill-level native" data-i18n="level_native">Nativo</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="100"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk4_2">Inglês</span>
+                        <span class="skill-level advanced" data-i18n="level_advanced">Avançado</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+                </div>
+                <div class="skill-item reveal-item">
+                    <div class="skill-info">
+                        <span class="skill-name" data-i18n="sk4_3">Espanhol</span>
+                        <span class="skill-level basic" data-i18n="level_basic">Básico</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" data-level="35"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== STUDIES ==================== -->
+        <section id="studies" class="section">
+            <h1 class="page-title" data-i18n="studies_title">Meus Estudos & Projetos</h1>
+            <p class="intro-text" data-i18n="studies_intro">Um espaço reservado para publicações, artigos, anotações de
+                estudo e materiais de desenvolvimento contínuo em tecnologia, dados e atuária.</p>
+
+            <div id="artigos-gallery" class="artigos-grid">
+                <!-- Articles injected dynamically by script.js -->
+            </div>
+            <div id="artigos-empty" class="empty-state" style="display: none; width: 100%; margin-top: 2rem;">
+                <i class="fa-solid fa-folder-open"></i>
+                <p data-i18n="studies_empty">Novos materiais serão publicados aqui em breve.</p>
+            </div>
+        </section>
+
+        <!-- ==================== AI ASSISTANT ==================== -->
+        <section id="assistant" class="section">
+            <h1 class="page-title" data-i18n="assistant_title">Assistente de I.A.</h1>
+            <p class="intro-text" data-i18n="assistant_intro">Desenvolvi este assistente inteligente usando a API do
+                Google Gemini. Ele conhece todo o meu currículo e habilidades. Fique à vontade para perguntar!</p>
+
+            <div class="chat-container">
+                <div class="chat-box" id="chat-box">
+                    <div class="message ai-message">
+                        <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="message-content" data-i18n="assistant_welcome">
+                            Olá! Sou a assistente virtual do Demian. Como posso te ajudar a conhecer melhor as
+                            habilidades e a trajetória dele hoje?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ex: Qual é a experiência do Demian com Python?"
+                        data-i18n-placeholder="assistant_placeholder">
+                    <button id="send-btn" aria-label="Enviar mensagem"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
