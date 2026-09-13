@@ -57,8 +57,8 @@ app.post(['/api/chat', '/curriculo/api/chat'], async (req, res) => {
             return res.status(400).json({ error: 'Message is required' });
         }
 
-        // Using gemini-1.5-flash for general fast text tasks
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        // Using gemini-2.5-flash for fast responses
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const chat = model.startChat({
             history: [

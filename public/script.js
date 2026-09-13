@@ -226,7 +226,7 @@ async function fetchArtigos(lang) {
                             ${grouped[area].map(item => `
                                 <a href="${item.link}" target="_blank" rel="noopener" class="artigo-item">
                                     ${item.imagem_url
-                                        ? `<img src="${item.imagem_url}" alt="${item.titulo}" class="artigo-img">`
+                                        ? `<img src="${item.imagem_url.startsWith('http') ? item.imagem_url : (apiBasePath + (item.imagem_url.startsWith('/') ? item.imagem_url : '/' + item.imagem_url))}" alt="${item.titulo}" class="artigo-img">`
                                         : `<div class="artigo-img-fallback"><i class="fa-solid fa-file-lines"></i></div>`
                                     }
                                     <div class="artigo-overlay">
